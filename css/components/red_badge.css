@@ -1,0 +1,7 @@
+.red_badge {
+  background-color: tomato;
+  display: flex;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+}
