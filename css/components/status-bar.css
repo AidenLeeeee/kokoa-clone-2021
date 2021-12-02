@@ -8,12 +8,14 @@
 }
 
 .status-bar__column {
+  margin-right: 10px;
   width: 33%;
 }
 
 .status-bar__column:nth-child(2) {
   display: flex;
   justify-content: center;
+  font-weight: 700;
 }
 
 .status-bar__column:last-child {
@@ -27,5 +29,6 @@
 }
 
 .status-bar__column:first-child span {
+  font-weight: 500;
   margin-right: 5px;
 }
