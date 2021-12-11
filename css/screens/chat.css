@@ -21,6 +21,28 @@
   margin-right: 15px;
 }
 
+@keyframes fadeIn {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOwn {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .main-chat {
   margin-top: 110px;
   display: flex;
@@ -41,6 +63,7 @@
   width: 100%;
   display: flex;
   margin-bottom: 25px;
+  animation: fadeIn 0.5s linear;
 }
 
 .message-row img {
@@ -77,6 +100,7 @@
 
 .message-row--own {
   justify-content: flex-end;
+  animation: fadeInOwn 0.5s linear;
 }
 
 .message-row--own .message__bubble {
@@ -101,6 +125,7 @@
   padding: 5px 25px;
   align-items: center;
   box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
 }
 
 .reply__column:first-child {
@@ -122,6 +147,7 @@
   border: var(--main-border);
   border-radius: 25px;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply__column:last-child > i,
@@ -152,4 +178,25 @@
 
 .reply__column button i {
   opacity: 1;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-grin,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-grin,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply input:focus {
+  width: 94vw;
+  transform: translateX(-13%) translateY(-80px);
+}
+
+.reply:focus-within {
+  transform: translateY(80px);
 }
